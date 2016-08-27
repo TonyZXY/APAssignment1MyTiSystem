@@ -1,3 +1,4 @@
+import TopUpHistory.TopUpHistory;
 import TravelPass.TravelPass;
 
 import java.util.ArrayList;
@@ -19,6 +20,13 @@ public class Users {
     }
     
     private ArrayList <TravelPass> history =new ArrayList<TravelPass>();
+
+    public ArrayList<TopUpHistory> getTopUpHistories() {
+        return topUpHistories;
+    }
+
+    private ArrayList <TopUpHistory> topUpHistories = new ArrayList<TopUpHistory>();
+
     public Users(String id,String userName,String email,double balance,char type){
         this.id = id;
         this.userName = userName;
