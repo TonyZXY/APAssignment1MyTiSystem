@@ -40,12 +40,12 @@ public class UsersData {
         double balance;
         try{
             balance = users.get(ID).getBalance();
-//            users.get(ID).getHistory().add(new )
         }catch(Exception e){
             balance = -1;
             
         }return balance;
     }
+
     
     public static double getRate(String ID){
         double rate = 1;
