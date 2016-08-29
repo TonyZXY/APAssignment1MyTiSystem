@@ -1,8 +1,6 @@
 package TravelPass;
 
-import java.sql.Time;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Project APAss1,

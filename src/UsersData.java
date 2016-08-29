@@ -1,11 +1,12 @@
+import TopUpHistory.TopUpHistory;
 import TravelPass.TravelPass;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import Station.*;
 
-import static java.lang.String.valueOf;
+import Station.*;
 
 /**
  * Project APAss1,
@@ -13,15 +14,15 @@ import static java.lang.String.valueOf;
  */
 public class UsersData {
     // this is users data storage
-    static HashMap<String,Users> users = new HashMap<>();
-    
-    public void addNewUser(String id,String userName,String email,double balance,char type){
-        users.put(id,new Users(id,userName,email,balance,type));
-        
+    static HashMap<String, Users> users = new HashMap<>();
+
+    void addNewUser(String id, String userName, String email, double balance, char type) {
+        users.put(id, new Users(id, userName, email, balance, type));
+
     }
-    
-    public void addNewUser(String id,String userName,String email,char type){
-        users.put(id,new Users(id,userName,email,type));
+
+    void addNewUser(String id, String userName, String email, char type) {
+        users.put(id, new Users(id, userName, email, type));
     }
     
     
@@ -35,47 +36,49 @@ public class UsersData {
         }
         return balance;
     }*/
-    
-    public static double checkUserID(String ID){
+
+    static double checkUserID(String ID) {
         double balance;
-        try{
+        try {
             balance = users.get(ID).getBalance();
-        }catch(Exception e){
+        } catch (Exception e) {
             balance = -1;
-            
-        }return balance;
+        }
+        return balance;
     }
 
-    
-    public static double getRate(String ID){
+
+    static double getRate(String ID) { //here is rate setting
         double rate = 1;
         char type = users.get(ID).getType();
-        if (type == 'A'){
+        if (type == 'A') {
             rate = 1.0;
-        }else if(type == 'C'){
+        } else if (type == 'C') {
             rate = 0.8;
-        }else if(type == 'S'){
+        } else if (type == 'S') {
             rate = 0.5;
         }
         return rate;
     }
-    
+
 //    static Hashmap<String,> history = new HashMap<>();
-    
+
     // this is stations data storage
-    static HashMap<String,Station> station = new HashMap<>();
+    static HashMap<String, Station> station = new HashMap<>();
     static ArrayList<String> stationsName = new ArrayList<>();
-    
-    public void addStation(String name,int zone){
-        station.put(name,new Station(name,zone));
-        stationsName.add(name+"            "+zone);
+
+    void addStation(String name, int zone) {
+        station.put(name, new Station(name, zone));
+        stationsName.add(name + "            " + zone);
     }
-    
-    public void travelHistory(String id,TravelPass travelPass){
-        
+
+    public void travelHistory(String id, double balance) {
+
     }
-    
-    public void topUpHistory(String id,double balance,Date date){
-        
+
+    static void topUp(String id, double balance) {
+        users.get(id).topUp(balance);
+        Calendar date = Calendar.getInstance();
+        users.get(id).getTopUpHistories().add(new TopUpHistory(balance, date));
     }
 }
