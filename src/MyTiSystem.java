@@ -326,7 +326,7 @@ public class MyTiSystem {
             }else if(amount+balance>100){
                 throw new OverAmountException("Your credit can not over $100");
             }else{
-                Date date = new Date();
+                Calendar date = Calendar.getInstance();
                 UsersData.users.get(id).topUp(amount);
                 UsersData.users.get(id).getTopUpHistories().add(new TopUpHistory(balance,date));//add TopUp history
                 System.out.println("your current balance is: "+ UsersData.checkUserID(id)+ "$");

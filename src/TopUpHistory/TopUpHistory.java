@@ -1,5 +1,6 @@
 package TopUpHistory;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -12,20 +13,20 @@ public class TopUpHistory {
     }
 
     public Date getDate() {
-        return date;
+        return date.getTime();
     }
 
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
     private double balance;
-    private Date date;
-    public TopUpHistory(double balance,Date date){
+    private Calendar date;
+    public TopUpHistory(double balance,Calendar date){
         this.balance = balance;
         this.date = date;
     }
