@@ -2,6 +2,7 @@ package TravelPass;
 
 import java.sql.Time;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -10,8 +11,8 @@ import java.util.Date;
  */
 public class TwoHoursPass extends TravelPass {
     char duration;
-    public TwoHoursPass(Date date, Time time){
-        super(date,time);
+    public TwoHoursPass(Calendar calendar){
+        super(calendar);
         this.duration = 'H';
     }
 }

@@ -1,6 +1,7 @@
 package TravelPass;
 
 import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -9,8 +10,8 @@ import java.util.Date;
  */
 public class AllDayPass extends TravelPass{
     char Duration;
-    public AllDayPass(Date date, Time time){
-        super(date,time);
+    public AllDayPass(Calendar calendar){
+        super(calendar);
         this.Duration = 'D';
     }
 }

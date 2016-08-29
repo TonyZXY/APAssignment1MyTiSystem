@@ -1,6 +1,7 @@
 package TravelPass;
 
 import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -10,8 +11,8 @@ import java.util.Date;
 public class AllDayPassZone1 extends AllDayPass {
     double price;
     
-    public AllDayPassZone1(Date date, Time time){
-        super(date,time);
-        this.price = 6.9;
+    public AllDayPassZone1(Calendar calendar,double price){
+        super(calendar);
+        this.price = price;
     }
 }

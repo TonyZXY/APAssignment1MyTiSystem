@@ -2,6 +2,7 @@ package TravelPass;
 
 import java.sql.Time;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -10,8 +11,8 @@ import java.util.Date;
  */
 public class TwoHoursPassZone2 extends TwoHoursPass {
     double price;
-    public TwoHoursPassZone2(Date date, Time time){
-        super(date,time);
-        this.price = 5.0;
+    public TwoHoursPassZone2(Calendar calendar,double price){
+        super(calendar);
+        this.price = price;
     }
 }

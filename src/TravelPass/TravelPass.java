@@ -1,6 +1,7 @@
 package TravelPass;
 
 import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -8,11 +9,11 @@ import java.util.Date;
  * Created by TonyZheng on 18/08/2016.
  */
 public class TravelPass {
-    Date date;
-    Time time;
-    public TravelPass( Date date, Time time){
-        this.date = date;
-        this.time = time;
+//    Date date;
+    Calendar calendar;
+    public TravelPass(Calendar calendar){
+//        this.date = date;
+        this.calendar = calendar;
     }
     
 }
