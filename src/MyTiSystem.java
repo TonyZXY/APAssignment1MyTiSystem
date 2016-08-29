@@ -116,6 +116,12 @@ public class MyTiSystem {
                 System.out.println("Enter (Q) to Quit");
                 id = new Scanner(System.in).nextLine();
                 m = new Scanner(System.in).next().charAt(0);
+                boolean valid = UsersData.checkUser(id);
+                if(valid){
+                    System.out.println("User id is Used, try other ID");
+//                    System.out.println("Sorry, that card already has a user; only 1 user per card is allowed");
+                    addNewUser();
+                }
                 System.out.println("Enter User Name");
                 userName = new Scanner(System.in).nextLine();
                 System.out.println("Enter User E-mail Address");

@@ -43,6 +43,16 @@ public class UsersData {
         return balance;
     }
 
+    static boolean checkUser(String id){
+        boolean valid = true;
+        try{
+            double balance = users.get(id).getBalance();
+        }catch (Exception e){
+            valid = false;
+        }
+        return valid;
+    }
+
 
     static double getRate(String ID) { //here is rate setting
         double rate = 1;
