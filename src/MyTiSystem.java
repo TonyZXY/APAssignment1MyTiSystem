@@ -18,6 +18,7 @@ public class MyTiSystem {
         System.out.println("2. Charge my MyTi");
         System.out.println("3. Show remaining credit");
 //        System.out.println("4. Purchase a Journey using a MyTi card");
+        System.out.println("7. Admin mod");
         System.out.println("0. Quit");
         System.out.println("Choose an option:");
     }
@@ -39,9 +40,95 @@ public class MyTiSystem {
         System.out.println("Your option:");
     }
 
+    private void admin(){
+        System.out.println("1. Print all Journeys made using all MyTi cards");
+        System.out.println("2. Show Station statistics");
+        System.out.println("3. Add a new User");
+//        System.out.println("4. Create a new MyTi Card");
+//        System.out.println("5. Attach a MyTi Card to a User");
+        System.out.println("0. Exit");
+        System.out.println("Your option:");
+    }
+
+    private void adminMenu(){
+        System.out.println("Enter Admin username");
+        String username = new Scanner(System.in).nextLine();
+        System.out.println("Enter Admin Password");
+        String password = new Scanner(System.in).nextLine();
+        boolean valid =UsersData.checkAdmin(username,password);
+        if(valid){
+            runAdminMenu();
+        }else {
+            System.err.println("Invalid Admin user, Exiting");
+            menuRun();
+        }
+    }
+
+    private void runAdminMenu(){
+        int m;
+        try{
+            do{
+                admin();
+                m = new Scanner(System.in).nextInt();
+                switch (m){
+                    case 1:
+                        printAllJorneys();
+                        break;
+                    case 2:
+                        showStationStatistics();
+                        break;
+                    case 3:
+                        addNewUser();
+                        break;
+                    case 0:
+                        menuRun();
+                        break;
+                    default:
+                        printBlackLine();
+                        System.out.println("Invalid Input. Try again.");
+                        runAdminMenu();
+                }
+            }while (m!=0);
+        }catch (Exception e){
+            printBlackLine();
+            System.out.println("Invalid Input, Try again.");
+            runAdminMenu();
+        }
+    }
+
+    private void printAllJorneys(){
+
+    }
+
+    private void showStationStatistics(){
+
+    }
+
+    private void addNewUser(){
+        String id;
+        String userName;
+        String email;
+        char type;
+        try {
+            System.out.println("Enter User id");
+            id = new Scanner(System.in).nextLine();
+            System.out.println("Enter User Name");
+            userName = new Scanner(System.in).nextLine();
+            System.out.println("Enter User E-mail Address");
+            email = new Scanner(System.in).nextLine();
+            System.out.println("Enter User Type");
+            System.out.println("(A)Adult,(C)Conssion,(S)Student");
+            type = new Scanner(System.in).next().charAt(0);
+            UsersData.addNewUser(id,userName,email,type);
+        }catch (Exception e){
+            System.out.println("Invalid Input, Try again.");
+            addNewUser();
+        }
+    }
+
 //    private Scanner keyPad = new Scanner(System.in);
 
-    public void menuRun() {
+    void menuRun() {
         int m;
         try {
             do {
@@ -57,9 +144,14 @@ public class MyTiSystem {
                     case 3:
                         showCreditMenu();
                         break;
-//                    case 4: journeyPurchase();
+//                    case 4:
+//                        journeyPurchase();
 //                        break;
-//                    case 0: waitingForCustomer();
+                    case 7:
+                        adminMenu();
+                        break;
+//                    case 0:
+//                        waitingForCustomer();
 //                        break;
                     default:
                         printBlackLine();
@@ -89,6 +181,7 @@ public class MyTiSystem {
             menuRun();
         }
     }
+
 
     private void purchaseTwoHoursPass(String userID, double balance, double rate) { //zone choose (2hours)
         try {

@@ -27,7 +27,7 @@ public class Users {
 
     private ArrayList <TopUpHistory> topUpHistories = new ArrayList<TopUpHistory>();
 
-    public Users(String id,String userName,String email,double balance,char type){
+    public Users(String id,String userName,String email,double balance,char type){ //this add new user is for test.
         this.id = id;
         this.userName = userName;
         this.email = email;

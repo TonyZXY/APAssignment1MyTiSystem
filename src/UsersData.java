@@ -1,10 +1,7 @@
 import TopUpHistory.TopUpHistory;
 import TravelPass.TravelPass;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 import Station.*;
 
@@ -16,12 +13,11 @@ public class UsersData {
     // this is users data storage
     static HashMap<String, Users> users = new HashMap<>();
 
-    void addNewUser(String id, String userName, String email, double balance, char type) {
+    static void addNewUser(String id, String userName, String email, double balance, char type) {
         users.put(id, new Users(id, userName, email, balance, type));
+    }//this add method is for test.
 
-    }
-
-    void addNewUser(String id, String userName, String email, char type) {
+    static void addNewUser(String id, String userName, String email, char type) {
         users.put(id, new Users(id, userName, email, type));
     }
     
@@ -72,13 +68,23 @@ public class UsersData {
         stationsName.add(name + "            " + zone);
     }
 
-    public void travelHistory(String id, double balance) {
-
-    }
+//    public void travelHistory(String id, double balance) {
+//
+//    }
 
     static void topUp(String id, double balance) {
         users.get(id).topUp(balance);
         Calendar date = Calendar.getInstance();
         users.get(id).getTopUpHistories().add(new TopUpHistory(balance, date));
+    }
+
+    static boolean checkAdmin(String username,String password){
+        String name = "Admin";
+        String pass = "Admin";
+        boolean valid = false;
+        if(Objects.equals(name, username) && Objects.equals(pass, password)){
+            valid = true;
+        }
+        return valid;
     }
 }
