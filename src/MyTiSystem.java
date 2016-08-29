@@ -40,7 +40,7 @@ public class MyTiSystem {
         System.out.println("Your option:");
     }
 
-    private void admin(){
+    private void admin() {
         System.out.println("1. Print all Journeys made using all MyTi cards");
         System.out.println("2. Show Station statistics");
         System.out.println("3. Add a new User");
@@ -50,27 +50,27 @@ public class MyTiSystem {
         System.out.println("Your option:");
     }
 
-    private void adminMenu(){
+    private void adminMenu() {
         System.out.println("Enter Admin username");
         String username = new Scanner(System.in).nextLine();
         System.out.println("Enter Admin Password");
         String password = new Scanner(System.in).nextLine();
-        boolean valid =UsersData.checkAdmin(username,password);
-        if(valid){
+        boolean valid = UsersData.checkAdmin(username, password);
+        if (valid) {
             runAdminMenu();
-        }else {
+        } else {
             System.err.println("Invalid Admin user, Exiting");
             menuRun();
         }
     }
 
-    private void runAdminMenu(){
+    private void runAdminMenu() {
         int m;
-        try{
-            do{
+        try {
+            do {
                 admin();
                 m = new Scanner(System.in).nextInt();
-                switch (m){
+                switch (m) {
                     case 1:
                         printAllJorneys();
                         break;
@@ -88,39 +88,45 @@ public class MyTiSystem {
                         System.out.println("Invalid Input. Try again.");
                         runAdminMenu();
                 }
-            }while (m!=0);
-        }catch (Exception e){
+            } while (m != 0);
+        } catch (Exception e) {
             printBlackLine();
             System.out.println("Invalid Input, Try again.");
             runAdminMenu();
         }
     }
 
-    private void printAllJorneys(){
+    private void printAllJorneys() {
 
     }
 
-    private void showStationStatistics(){
+    private void showStationStatistics() {
 
     }
 
-    private void addNewUser(){
+    private void addNewUser() {
         String id;
         String userName;
         String email;
         char type;
         try {
-            System.out.println("Enter User id");
-            id = new Scanner(System.in).nextLine();
-            System.out.println("Enter User Name");
-            userName = new Scanner(System.in).nextLine();
-            System.out.println("Enter User E-mail Address");
-            email = new Scanner(System.in).nextLine();
-            System.out.println("Enter User Type");
-            System.out.println("(A)Adult,(C)Conssion,(S)Student");
-            type = new Scanner(System.in).next().charAt(0);
-            UsersData.addNewUser(id,userName,email,type);
-        }catch (Exception e){
+            char m;
+            do {
+                System.out.println("Enter User id");
+                System.out.println("Enter (Q) to Quit");
+                id = new Scanner(System.in).nextLine();
+                m = new Scanner(System.in).next().charAt(0);
+                System.out.println("Enter User Name");
+                userName = new Scanner(System.in).nextLine();
+                System.out.println("Enter User E-mail Address");
+                email = new Scanner(System.in).nextLine();
+                System.out.println("Enter User Type");
+                System.out.println("(A)Adult,(C)Conssion,(S)Student");
+                type = new Scanner(System.in).next().charAt(0);
+                UsersData.addNewUser(id, userName, email, type);
+            } while (m != 'Q');
+            runAdminMenu();
+        } catch (Exception e) {
             System.out.println("Invalid Input, Try again.");
             addNewUser();
         }
@@ -428,7 +434,7 @@ public class MyTiSystem {
 //                UsersData.users.get(id).getTopUpHistories().add(new TopUpHistory(balance, date));//add TopUp history
 
 //      TopUp method used to use method in the comment
-                UsersData.topUp(id,amount); //topUp
+                UsersData.topUp(id, amount); //topUp
                 System.out.println("your current balance is: " + UsersData.checkUserID(id) + "$");
                 printBlackLine();
             }
