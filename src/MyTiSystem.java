@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -149,6 +150,8 @@ public class MyTiSystem {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             }else{
                 UsersData.users.get(id).purchase(3.5*rate);
+                Calendar date = Calendar.getInstance();
+                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date,3.5*rate));  //add history
                 System.out.println("You successfully purchase 2 hours Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -167,6 +170,8 @@ public class MyTiSystem {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             }else{
                 UsersData.users.get(id).purchase(5.0*rate);
+                Calendar date = Calendar.getInstance();
+                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date,5.0*rate)); //add history
                 System.out.println("You successfully purchase 2 hours Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -214,6 +219,8 @@ public class MyTiSystem {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             }else{
                 UsersData.users.get(id).purchase(6.9*rate);
+                Calendar date = Calendar.getInstance();
+                UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date,6.9*rate)); //add history
                 System.out.println("You successfully purchase 1 day Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -230,7 +237,9 @@ public class MyTiSystem {
             if(balance - (9.8*rate)< 0 ){
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             }else{
-                UsersData.users.get(id).purchase(9.8);
+                UsersData.users.get(id).purchase(9.8*rate);
+                Calendar date = Calendar.getInstance();
+                UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date,9.8*rate)); //add history
                 System.out.println("You successfully purchase 1 day Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();

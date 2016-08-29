@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17863c99-1940-44ee-b213-cd178876f37a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/AllDayPass.java" afterPath="$PROJECT_DIR$/src/TravelPass/AllDayPass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" afterPath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" afterPath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TravelPass.java" afterPath="$PROJECT_DIR$/src/TravelPass/TravelPass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java" afterPath="$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" afterPath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" afterPath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyTiSystem.java" afterPath="$PROJECT_DIR$/src/MyTiSystem.java" />
     </list>
     <ignored path="APAssignment1MyTiSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,107 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyTiSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3120">
-              <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#13426#13427#0" expanded="true" />
-                <element signature="e#13465#13466#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UsersData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwoHoursPassZone1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwoHoursPassZone2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllDayPass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllDayPassZone1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TravelPass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwoHoursPass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AllDayPassZone2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="225">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTiSystem.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3555">
+              <caret line="242" column="99" selection-start-line="242" selection-start-column="99" selection-end-line="242" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -160,7 +68,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/TopUpHistory/TopUpHistory.java" />
         <option value="$PROJECT_DIR$/src/Users.java" />
-        <option value="$PROJECT_DIR$/src/MyTiSystem.java" />
         <option value="$PROJECT_DIR$/src/UsersData.java" />
         <option value="$PROJECT_DIR$/src/TravelPass/TravelPass.java" />
         <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java" />
@@ -169,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" />
         <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" />
         <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" />
+        <option value="$PROJECT_DIR$/src/MyTiSystem.java" />
       </list>
     </option>
   </component>
@@ -209,7 +117,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,6 +205,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -306,7 +214,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../oop_basics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -759,15 +667,17 @@
       <workItem from="1472126728555" duration="198000" />
       <workItem from="1472192864615" duration="364000" />
       <workItem from="1472262619320" duration="6166000" />
-      <workItem from="1472455692049" duration="402000" />
+      <workItem from="1472455692049" duration="1137000" />
+      <workItem from="1472457595813" duration="712000" />
+      <workItem from="1472469291790" duration="639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7317000" />
+    <option name="totallyTimeSpent" value="9403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="984" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -823,7 +733,7 @@
     </layout-to-restore>
   </component>
   <component name="TypingCorrectorSettings">
-    <option name="CHARS_CORRECTED" value="1" />
+    <option name="CHARS_CORRECTED" value="2" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -841,14 +751,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13426#13427#0" expanded="true" />
-            <element signature="e#13465#13466#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -865,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,9 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,6 +803,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,9 +812,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13426#13427#0" expanded="true" />
-            <element signature="e#13465#13466#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TopUpHistory/TopUpHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -964,29 +868,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopUpException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13426#13427#0" expanded="true" />
-            <element signature="e#13465#13466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Users.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsersData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TopUpException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -998,18 +918,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsersData.java">
+    <entry file="file://$PROJECT_DIR$/src/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1018,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,15 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,25 +944,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
+    <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="3555">
+          <caret line="242" column="99" selection-start-line="242" selection-start-column="99" selection-end-line="242" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
