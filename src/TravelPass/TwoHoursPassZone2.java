@@ -8,8 +8,8 @@ import java.util.Calendar;
  */
 public class TwoHoursPassZone2 extends TravelPass {
     double price;
-    public TwoHoursPassZone2(Calendar calendar,char duration,double price){
-        super(calendar,duration);
+    public TwoHoursPassZone2(Calendar calendar,char duration,int zone,double price){
+        super(calendar,duration,zone);
         this.price = price;
     }
 }

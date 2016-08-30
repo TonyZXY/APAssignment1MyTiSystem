@@ -8,12 +8,14 @@ import java.util.Calendar;
  */
 public class TravelPass {
 //    Date date;
-    Calendar calendar;
-    char Duration;
-    public TravelPass(Calendar calendar,char duration){
+    private Calendar calendar;
+    private char Duration;
+    private int zone;
+    TravelPass(Calendar calendar,char duration,int zone){
 //        this.date = date;
         this.calendar = calendar;
         this.Duration = duration;
+        this.zone = zone;
     }
 
     public Calendar getCalendar(){
@@ -23,5 +25,10 @@ public class TravelPass {
     public char getDuration(){
         return Duration;
     }
+
+    public int getZone(){
+        return zone;
+    }
+
 }
 
