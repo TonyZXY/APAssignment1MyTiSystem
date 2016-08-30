@@ -9,10 +9,19 @@ import java.util.Calendar;
 public class TravelPass {
 //    Date date;
     Calendar calendar;
-    public TravelPass(Calendar calendar){
+    char Duration;
+    public TravelPass(Calendar calendar,char duration){
 //        this.date = date;
         this.calendar = calendar;
+        this.Duration = duration;
     }
-    
+
+    public Calendar getCalendar(){
+        return calendar;
+    }
+
+    public char getDuration(){
+        return Duration;
+    }
 }
 

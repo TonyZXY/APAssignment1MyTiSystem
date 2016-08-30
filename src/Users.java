@@ -71,5 +71,8 @@ public class Users {
     public char getType(){
         return type;
     }
-    
+
+    public int historySize(){
+        return history.size();
+    }
 }
