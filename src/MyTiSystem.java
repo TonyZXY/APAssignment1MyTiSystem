@@ -1,9 +1,9 @@
 import java.util.Calendar;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Date;
 
-import TopUpHistory.*;
+import TopUpHistory.TopUpHistory;
 import TravelPass.*;
 
 /**
@@ -18,6 +18,7 @@ public class MyTiSystem {
         System.out.println("2. Charge my MyTi");
         System.out.println("3. Show remaining credit");
 //        System.out.println("4. Purchase a Journey using a MyTi card");
+        System.out.println("5. Show Card Info");
         System.out.println("7. Admin mod");
         System.out.println("0. Quit");
         System.out.println("Choose an option:");
@@ -48,6 +49,75 @@ public class MyTiSystem {
 //        System.out.println("5. Attach a MyTi Card to a User");
         System.out.println("0. Exit");
         System.out.println("Your option:");
+    }
+
+    private void cardInfo() {
+        System.out.println("1. Show recent 10 travel history");
+        System.out.println("2. Show recent 10 TopUp history");
+        System.out.println("3. Show card Info");
+        System.out.println("0. Exit");
+        System.out.println("Your option:");
+    }
+
+    private void cardInfoMenu() {
+        System.out.println("Enter card id:");
+        String id = new Scanner(System.in).nextLine();
+        double balance = UsersData.checkUserID(id);
+        if (balance == -1) {
+            System.err.println("Card ID not Found!");
+            menuRun();
+        } else {
+            runCardInfoMenu(id);
+        }
+    }
+
+    private void runCardInfoMenu(String id) {
+        int m;
+        try {
+            do {
+                cardInfo();
+                m = new Scanner(System.in).nextInt();
+                switch (m) {
+//                    case 1:
+//                        recent10TravelHistory(id);
+//                        break;
+                    case 2:
+                        recent10TopUpHistory(id);
+                        break;
+//                    case 3:
+//                        showMoreInfo(id);
+//                        break;
+                    case 0:
+                        menuRun();
+                        break;
+                    default:
+                        System.err.println("Invalid Input, Try again.");
+                        runCardInfoMenu(id);
+                }
+            } while (m != 0);
+        } catch (Exception e) {
+            System.err.println("Invalid Input, Try again.");
+            runCardInfoMenu(id);
+        }
+    }
+
+    private void recent10TopUpHistory(String id) {
+        int i = UsersData.users.get(id).historySize();
+        if (i > 10) {
+            for (int x = 0; x < 10; x++) {
+                double balance = UsersData.users.get(id).getTopUpHistories().get(i-x-1).getBalance();
+                Date date = UsersData.users.get(id).getTopUpHistories().get(i-x-1).getDate();
+                System.out.println("TopUp $"+ balance+ ", at Time:" +date);
+            }
+            menuRun();
+        }else{
+            for(int x = i; x > 0;x--){
+                double balance = UsersData.users.get(id).getTopUpHistories().get(x-1).getBalance();
+                Date date = UsersData.users.get(id).getTopUpHistories().get(x-1).getDate();
+                System.out.println("TopUp $"+ balance+ ", at Time:" +date);
+            }
+            menuRun();
+        }
     }
 
     private void adminMenu() {
@@ -159,6 +229,9 @@ public class MyTiSystem {
 //                    case 4:
 //                        journeyPurchase();
 //                        break;
+                    case 5:
+                        cardInfoMenu();
+                        break;
                     case 7:
                         adminMenu();
                         break;
@@ -260,7 +333,7 @@ public class MyTiSystem {
             } else {
                 UsersData.users.get(id).purchase(3.5 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H',1, 3.5 * rate));  //add history
+                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H', 1, 3.5 * rate));  //add history
                 System.out.println("You successfully purchase 2 hours Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -280,7 +353,7 @@ public class MyTiSystem {
             } else {
                 UsersData.users.get(id).purchase(5.0 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H',2, 5.0 * rate)); //add history
+                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H', 2, 5.0 * rate)); //add history
                 System.out.println("You successfully purchase 2 hours Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -322,14 +395,14 @@ public class MyTiSystem {
 
     }
 
-    private void purchaseZoneOneDayPass(String id, double balance, double rate) {
+    private void purchaseZoneOneDayPass(String id, double balance, double rate) { //purchase
         try {
             if (balance - (6.9 * rate) < 0) {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             } else {
                 UsersData.users.get(id).purchase(6.9 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date, 'D',1, 6.9 * rate)); //add history
+                UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date, 'D', 1, 6.9 * rate)); //add history
                 System.out.println("You successfully purchase 1 day Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -341,14 +414,14 @@ public class MyTiSystem {
         }
     }
 
-    private void purchaseZoneTwoDayPass(String id, double balance, double rate) {
+    private void purchaseZoneTwoDayPass(String id, double balance, double rate) { //purchase
         try {
             if (balance - (9.8 * rate) < 0) {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             } else {
                 UsersData.users.get(id).purchase(9.8 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date, 'D',2, 9.8 * rate)); //add history
+                UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date, 'D', 2, 9.8 * rate)); //add history
                 System.out.println("You successfully purchase 1 day Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -474,14 +547,14 @@ public class MyTiSystem {
         }
     }
 
-    private int checkValidTicket(String id) {
+    private int checkValidTicket(String id) {  //this method is to check if the ticket is valid;
         int valid = 3;
         try {
             Calendar now = Calendar.getInstance();
             Calendar ticketTime = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getCalendar();
             char ticketType = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getDuration();
-            int ticketZone = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getZone();
-            int thisZone = UsersData.station.get(thisStop).getZone();
+//            int ticketZone = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getZone();
+//            int thisZone = UsersData.station.get(thisStop).getZone();
             //ticketTime is the most resent ticket time.
             int nowDate = now.get(Calendar.DAY_OF_YEAR);
             int ticketDate = ticketTime.get(Calendar.DAY_OF_YEAR);
