@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17863c99-1940-44ee-b213-cd178876f37a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/typing_corrector_settings.xml" afterPath="$PROJECT_DIR$/.idea/typing_corrector_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyTiSystem.java" afterPath="$PROJECT_DIR$/src/MyTiSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" afterPath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" afterPath="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TravelPass.java" afterPath="$PROJECT_DIR$/src/TravelPass/TravelPass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" afterPath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" afterPath="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UsersData.java" afterPath="$PROJECT_DIR$/src/UsersData.java" />
     </list>
     <ignored path="APAssignment1MyTiSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +34,7 @@
       <file leaf-file-name="TopUpHistory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TopUpHistory/TopUpHistory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="165">
               <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="e#274#275#0" expanded="true" />
@@ -42,11 +47,9 @@
       <file leaf-file-name="MyTiSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="116" column="75" selection-start-line="116" selection-start-column="75" selection-end-line="116" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,16 +57,9 @@
       <file leaf-file-name="TravelPass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-              <folding>
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#552#553#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,10 +67,24 @@
       <file leaf-file-name="UsersData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UsersData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="945">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1651#1652#0" expanded="true" />
+                <element signature="e#1688#1689#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,9 +93,11 @@
       <file leaf-file-name="AllDayPassZone1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +105,8 @@
       <file leaf-file-name="AllDayPassZone2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -103,8 +115,8 @@
       <file leaf-file-name="TwoHoursPassZone1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="255">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -113,8 +125,8 @@
       <file leaf-file-name="TwoHoursPassZone2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="255">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -146,14 +158,15 @@
         <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java" />
         <option value="$PROJECT_DIR$/src/TravelPass/AllDayPass.java" />
         <option value="$PROJECT_DIR$/src/Station/Station.java" />
-        <option value="$PROJECT_DIR$/src/UsersData.java" />
-        <option value="$PROJECT_DIR$/src/Users.java" />
-        <option value="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" />
-        <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" />
-        <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" />
-        <option value="$PROJECT_DIR$/src/TravelPass/TravelPass.java" />
-        <option value="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/UsersData.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/TravelPassHistory.java" />
+        <option value="$PROJECT_DIR$/src/Users.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/TravelPass.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java" />
+        <option value="$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java" />
         <option value="$PROJECT_DIR$/src/MyTiSystem.java" />
       </list>
     </option>
@@ -194,8 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,7 +296,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -753,7 +766,9 @@
       <workItem from="1472469291790" duration="1000000" />
       <workItem from="1472470408174" duration="6762000" />
       <workItem from="1472518803875" duration="262000" />
-      <workItem from="1472534324911" duration="8083000" />
+      <workItem from="1472534324911" duration="9857000" />
+      <workItem from="1472714749876" duration="31000" />
+      <workItem from="1472714813771" duration="3076000" />
     </task>
     <task id="LOCAL-00001" summary="make some changes that store zone info in TravelPass class&#10;">
       <created>1472538166705</created>
@@ -766,15 +781,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24871000" />
+    <option name="totallyTimeSpent" value="29752000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="984" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -794,8 +808,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -833,7 +848,6 @@
         <state relative-caret-position="165">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="e#274#275#0" expanded="true" />
             <element signature="e#311#312#0" expanded="true" />
           </folding>
@@ -885,32 +899,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +916,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -927,7 +927,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="e#274#275#0" expanded="true" />
             <element signature="e#311#312#0" expanded="true" />
           </folding>
@@ -979,32 +978,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java" />
     <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,9 +1011,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="212" column="32" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,9 +1061,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,14 +1088,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPass.java" />
     <entry file="file://$PROJECT_DIR$/src/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1129,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,7 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,78 +1137,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPass.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="339" column="67" selection-start-line="339" selection-start-column="67" selection-end-line="339" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +1156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,23 +1163,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UsersData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TopUpHistory/TopUpHistory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="165">
           <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="e#274#275#0" expanded="true" />
@@ -1288,13 +1177,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/UsersData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="75" selection-start-line="116" selection-start-column="75" selection-end-line="116" selection-end-column="75" />
+        <state relative-caret-position="945">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPassHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TwoHoursPassZone1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/TravelPass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TravelPass/AllDayPassZone1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyTiSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -11,11 +11,26 @@ public class TravelPass {
     private Calendar calendar;
     private char Duration;
     private int zone;
-    TravelPass(Calendar calendar,char duration,int zone){
+    private String startName;
+    private String endName;
+    private char type;
+
+    TravelPass(Calendar calendar,char duration,int zone,String startName,String endName,char type){
+        this.startName = startName;
+        this.endName = endName;
+        this.type = type;
 //        this.date = date;
         this.calendar = calendar;
         this.Duration = duration;
         this.zone = zone;
+    }
+
+    TravelPass(Calendar calendar,char duration,int zone,String startName,char type){
+        this.startName = startName;
+        this.Duration = duration;
+        this.zone = zone;
+        this.type = type;
+        this.calendar = calendar;
     }
 
     public Calendar getCalendar(){

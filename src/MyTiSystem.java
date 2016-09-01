@@ -1,7 +1,4 @@
-import java.util.Calendar;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Date;
+import java.util.*;
 
 import TopUpHistory.TopUpHistory;
 import TravelPass.*;
@@ -47,6 +44,7 @@ public class MyTiSystem {
         System.out.println("3. Add a new User");
 //        System.out.println("4. Create a new MyTi Card");
 //        System.out.println("5. Attach a MyTi Card to a User");
+        System.out.println("7. Change Current Station");
         System.out.println("0. Exit");
         System.out.println("Your option:");
     }
@@ -71,7 +69,7 @@ public class MyTiSystem {
         }
     }
 
-    private void runCardInfoMenu(String id) {
+    private void runCardInfoMenu(String id) { //card info menu
         int m;
         try {
             do {
@@ -150,6 +148,9 @@ public class MyTiSystem {
                     case 3:
                         addNewUser();
                         break;
+                    case 7:
+                        changeCurrentStation();
+                        break;
                     case 0:
                         menuRun();
                         break;
@@ -172,6 +173,25 @@ public class MyTiSystem {
 
     private void showStationStatistics() {
 
+    }
+
+    private void changeCurrentStation(){
+        System.out.println("Current Station is: " + thisStop);
+        System.out.println("Station Name    :  Zone");
+        for (int i = 0; i < UsersData.stationsName.size(); i++) {
+            System.out.println(UsersData.stationsName.get(i));
+        }
+        System.out.println("Enter Changed Station: ");
+        String station = new Scanner(System.in).nextLine();
+        boolean valid = UsersData.checkStation(station);
+        if(valid){
+            setThisStop(station);
+            System.out.println("Current station now is: " + thisStop);
+            runAdminMenu();
+        }else {
+            System.out.println("Invalid station name, Try again");
+            runAdminMenu();
+        }
     }
 
     private void addNewUser() {
@@ -258,8 +278,9 @@ public class MyTiSystem {
         userID = new Scanner(System.in).nextLine();
         double balance = UsersData.checkUserID(userID);
         if (balance != -1) {
+            char type = UsersData.users.get(userID).getType();
             double rate = UsersData.getRate(userID);
-            travelPassPurchaseMenu(userID, balance, rate);
+            travelPassPurchaseMenu(userID, balance, rate,type);
         } else {
             printBlackLine();
             System.err.println("User ID not found. Try again.");
@@ -268,19 +289,19 @@ public class MyTiSystem {
     }
 
 
-    private void purchaseTwoHoursPass(String userID, double balance, double rate) { //zone choose (2hours)
+    private void purchaseTwoHoursPass(String userID, double balance, double rate,char type) { //zone choose (2hours)
         try {
             zoneMenu();
             int m = new Scanner(System.in).nextInt();
             switch (m) {
                 case 1:
-                    purchaseZoneOneTwoHoursPass(userID, balance, rate);
+                    purchaseZoneOneTwoHoursPass(userID, balance, rate,type,null);
                     break;
                 case 2:
-                    purchaseZoneTwoTwoHoursPass(userID, balance, rate);
+                    purchaseZoneTwoTwoHoursPass(userID, balance, rate,type,null);
                     break;
                 case 3:
-                    selectByStationTwoHoursPass(userID, balance, rate);
+                    selectByStationTwoHoursPass(userID, balance, rate,type);
                     break;
                 case 0:
                     mainMenu();
@@ -288,26 +309,26 @@ public class MyTiSystem {
                 default:
                     printBlackLine();
                     System.out.println("Invalid Input, Try again.");
-                    purchaseTwoHoursPass(userID, balance, rate);
+                    purchaseTwoHoursPass(userID, balance, rate,type);
             }
         } catch (InputMismatchException e) {
             printBlackLine();
             System.out.println("Invalid Input, Try again.");
-            purchaseTwoHoursPass(userID, balance, rate);
+            purchaseTwoHoursPass(userID, balance, rate,type);
         }
 
     }
 
-    private void travelPassPurchaseMenu(String id, double balance, double rate) { //purchase choose pass type
+    private void travelPassPurchaseMenu(String id, double balance, double rate,char type) { //purchase choose pass type
         try {
             purchaseMenu();
             int m = new Scanner(System.in).nextInt();
             switch (m) {
                 case 1:
-                    purchaseTwoHoursPass(id, balance, rate);
+                    purchaseTwoHoursPass(id, balance, rate,type);
                     break;
                 case 2:
-                    purchaseOneDayPass(id, balance, rate);
+                    purchaseOneDayPass(id, balance, rate,type);
                     break;
                 case 0:
                     menuRun();
@@ -320,12 +341,12 @@ public class MyTiSystem {
         } catch (InputMismatchException e) {
             printBlackLine();
             System.out.println("Invalid Input, Try again.");
-            travelPassPurchaseMenu(id, balance, rate);
+            travelPassPurchaseMenu(id, balance, rate,type);
         }
 
     }
 
-    private void purchaseZoneOneTwoHoursPass(String id, double balance, double rate) { //make purchase of 2hours zone1
+    private void purchaseZoneOneTwoHoursPass(String id, double balance, double rate,char type,String endName) { //make purchase of 2hours zone1
         try {
             if (balance - (3.5 * rate) < 0) {
                 printBlackLine();
@@ -333,7 +354,11 @@ public class MyTiSystem {
             } else {
                 UsersData.users.get(id).purchase(3.5 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H', 1, 3.5 * rate));  //add history
+                if(Objects.equals(endName,null)) {
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H', 1, 3.5 * rate, thisStop, type));  //add history
+                }else {
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date,'H',1,3.5*rate,thisStop,endName,type));
+                }
                 System.out.println("You successfully purchase 2 hours Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -345,7 +370,7 @@ public class MyTiSystem {
         }
     }
 
-    private void purchaseZoneTwoTwoHoursPass(String id, double balance, double rate) { //make purchase of 2hours zone1&2
+    private void purchaseZoneTwoTwoHoursPass(String id, double balance, double rate,char type,String endName) { //make purchase of 2hours zone1&2
         try {
             if (balance - (5.0 * rate) < 0) {
                 printBlackLine();
@@ -353,7 +378,11 @@ public class MyTiSystem {
             } else {
                 UsersData.users.get(id).purchase(5.0 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H', 2, 5.0 * rate)); //add history
+                if (Objects.equals(endName,null)){
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H', 2, 5.0 * rate, thisStop, type)); //add history
+                }else {
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date,'H',2,5.0*rate,thisStop,endName,type));
+                }
                 System.out.println("You successfully purchase 2 hours Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -364,20 +393,20 @@ public class MyTiSystem {
         }
     }
 
-    private void purchaseOneDayPass(String id, double balance, double rate) { //day pass menu
+    private void purchaseOneDayPass(String id, double balance, double rate,char type) { //day pass menu
 
         try {
             zoneMenu();
             int m = new Scanner(System.in).nextInt();
             switch (m) {
                 case 1:
-                    purchaseZoneOneDayPass(id, balance, rate);
+                    purchaseZoneOneDayPass(id, balance, rate,type,null);
                     break;
                 case 2:
-                    purchaseZoneTwoDayPass(id, balance, rate);
+                    purchaseZoneTwoDayPass(id, balance, rate,type,null);
                     break;
                 case 3:
-                    selectByStationDayPass(id, balance, rate);
+                    selectByStationDayPass(id, balance, rate,type);
                     break;
                 case 0:
                     menuRun();
@@ -385,24 +414,28 @@ public class MyTiSystem {
                 default:
                     printBlackLine();
                     System.out.println("Invalid Input, Try again.");
-                    purchaseOneDayPass(id, balance, rate);
+                    purchaseOneDayPass(id, balance, rate,type);
             }
         } catch (InputMismatchException e) {
             printBlackLine();
             System.out.println("Invalid Input, Try again.");
-            purchaseOneDayPass(id, balance, rate);
+            purchaseOneDayPass(id, balance, rate,type);
         }
 
     }
 
-    private void purchaseZoneOneDayPass(String id, double balance, double rate) { //purchase
+    private void purchaseZoneOneDayPass(String id, double balance, double rate,char type,String endName) { //purchase
         try {
             if (balance - (6.9 * rate) < 0) {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             } else {
                 UsersData.users.get(id).purchase(6.9 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date, 'D', 1, 6.9 * rate)); //add history
+                if (Objects.equals(endName,null)){
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date, 'D', 1, 6.9 * rate, thisStop, type)); //add history
+                }else{
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date,'D',1,6.9*rate,thisStop,endName,type));
+                }
                 System.out.println("You successfully purchase 1 day Zone 1 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -414,14 +447,18 @@ public class MyTiSystem {
         }
     }
 
-    private void purchaseZoneTwoDayPass(String id, double balance, double rate) { //purchase
+    private void purchaseZoneTwoDayPass(String id, double balance, double rate,char type,String endName) { //purchase
         try {
             if (balance - (9.8 * rate) < 0) {
                 throw new NoEnoughFundExcpetion("No enough Fund in your card");
             } else {
                 UsersData.users.get(id).purchase(9.8 * rate);
                 Calendar date = Calendar.getInstance();
-                UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date, 'D', 2, 9.8 * rate)); //add history
+                if(Objects.equals(endName,null)) {
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date, 'D', 2, 9.8 * rate, thisStop, type)); //add history
+                }else {
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date,'D',2,9.8*rate,thisStop,endName,type));
+                }
                 System.out.println("You successfully purchase 1 day Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
                 menuRun();
@@ -433,7 +470,7 @@ public class MyTiSystem {
         }
     }
 
-    private void selectByStationTwoHoursPass(String id, double balance, double rate) { //select by station name 2 hours pass
+    private void selectByStationTwoHoursPass(String id, double balance, double rate,char type) { //select by station name 2 hours pass
         try {
             System.out.println("Station Name    :  Zone");
             for (int i = 0; i < UsersData.stationsName.size(); i++) {
@@ -446,21 +483,25 @@ public class MyTiSystem {
             int thisZone = UsersData.station.get(thisStop).getZone();
             int destnationZone = UsersData.station.get(destnationStop).getZone();
             if (thisZone == 1 && destnationZone == 1) {
-                purchaseZoneOneTwoHoursPass(id, balance, rate);
+                purchaseZoneOneTwoHoursPass(id, balance, rate,type,destnationStop);
             } else if ((thisZone == 1 && destnationZone == 2) || (thisZone == 2 && destnationZone == 1) || (thisZone == 2 && destnationZone == 2)) {
-                purchaseZoneTwoTwoHoursPass(id, balance, rate);
+                purchaseZoneTwoTwoHoursPass(id, balance, rate,type,destnationStop);
             }
 
         } catch (Exception e) {
             printBlackLine();
             System.err.println("Invalid input, Try again");
-            selectByStationTwoHoursPass(id, balance, rate);
+            selectByStationTwoHoursPass(id, balance, rate,type);
         }
+    }
+
+    public void setThisStop(String thisStop) {
+        this.thisStop = thisStop;
     }
 
     private String thisStop = "Central";
 
-    private void selectByStationDayPass(String id, double balance, double rate) { //select by station name day pass
+    private void selectByStationDayPass(String id, double balance, double rate,char type) { //select by station name day pass
         try {
             System.out.println("Station Name    :  Zone");
             for (int i = 0; i < UsersData.stationsName.size(); i++) {
@@ -472,14 +513,14 @@ public class MyTiSystem {
             int thisZone = UsersData.station.get(thisStop).getZone();
             int destnationZone = UsersData.station.get(destnationStop).getZone();
             if (thisZone == 1 && destnationZone == 1) {
-                purchaseZoneOneDayPass(id, balance, rate);
+                purchaseZoneOneDayPass(id, balance, rate,type,destnationStop);
             } else if ((thisZone == 1 && destnationZone == 2) || (thisZone == 2 && destnationZone == 1) || (thisZone == 2 && destnationZone == 2)) {
-                purchaseZoneTwoDayPass(id, balance, rate);
+                purchaseZoneTwoDayPass(id, balance, rate,type,destnationStop);
             }
         } catch (Exception e) {
             printBlackLine();
             System.out.println("Invalid input, Try again");
-            selectByStationDayPass(id, balance, rate);
+            selectByStationDayPass(id, balance, rate,type);
         }
     }
 

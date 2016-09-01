@@ -53,6 +53,17 @@ public class UsersData {
         return valid;
     }
 
+    static boolean checkStation(String stationName){
+        boolean valid = false;
+        try{
+            int zone = station.get(stationName).getZone();
+            valid = true;
+        }catch (Exception e){
+            valid = false;
+        }
+        return valid;
+    }
+
 
     static double getRate(String ID) { //here is rate setting
         double rate = 1;
