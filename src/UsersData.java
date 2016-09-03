@@ -15,13 +15,19 @@ public class UsersData {
 
     static void addNewUser(String id, String userName, String email, double balance, char type) {
         users.put(id, new Users(id, userName, email, balance, type));
+        userNames.add(id);
     }//this add method is for test.
 
     static void addNewUser(String id, String userName, String email, char type) {
         users.put(id, new Users(id, userName, email, type));
+        userNames.add(id);
     }
     
-    
+    private static ArrayList<String> userNames = new ArrayList<>();
+
+    public ArrayList getUserNames(){
+        return userNames;
+    }
 /*    public static double checkUserID(String ID){
         String id = ID;
         double balance ;

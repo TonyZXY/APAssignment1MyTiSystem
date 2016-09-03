@@ -2,6 +2,7 @@ import java.util.*;
 
 import TopUpHistory.TopUpHistory;
 import TravelPass.*;
+import TravelPassHistory.TravelPassHistory;
 
 /**
  * Project APAss1,
@@ -456,8 +457,10 @@ public class MyTiSystem {
                 Calendar date = Calendar.getInstance();
                 if(Objects.equals(endName,null)) {
                     UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date, 'D', 2, 9.8 * rate, thisStop, type)); //add history
+//                    TravelPassHistory.getTravelPassHistory().add(id+date.getTime());
                 }else {
                     UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date,'D',2,9.8*rate,thisStop,endName,type));
+                    //add travel pass history for admin to use
                 }
                 System.out.println("You successfully purchase 1 day Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();
