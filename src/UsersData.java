@@ -22,10 +22,10 @@ public class UsersData {
         users.put(id, new Users(id, userName, email, type));
         userNames.add(id);
     }
-    
+
     private static ArrayList<String> userNames = new ArrayList<>();
 
-    public ArrayList getUserNames(){
+    public ArrayList getUserNames() {
         return userNames;
     }
 /*    public static double checkUserID(String ID){
@@ -49,22 +49,22 @@ public class UsersData {
         return balance;
     }
 
-    static boolean checkUser(String id){
+    static boolean checkUser(String id) {
         boolean valid = true;
-        try{
+        try {
             double balance = users.get(id).getBalance();
-        }catch (Exception e){
+        } catch (Exception e) {
             valid = false;
         }
         return valid;
     }
 
-    static boolean checkStation(String stationName){
+    static boolean checkStation(String stationName) {
         boolean valid = false;
-        try{
+        try {
             int zone = station.get(stationName).getZone();
             valid = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             valid = false;
         }
         return valid;
@@ -105,11 +105,11 @@ public class UsersData {
         users.get(id).getTopUpHistories().add(new TopUpHistory(balance, date));
     }
 
-    static boolean checkAdmin(String username,String password){
+    static boolean checkAdmin(String username, String password) {
         String name = "Admin";
         String pass = "Admin";
         boolean valid = false;
-        if(Objects.equals(name, username) && Objects.equals(pass, password)){
+        if (Objects.equals(name, username) && Objects.equals(pass, password)) {
             valid = true;
         }
         return valid;

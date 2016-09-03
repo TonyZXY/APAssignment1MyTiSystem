@@ -26,7 +26,8 @@ public class TopUpHistory {
 
     private double balance;
     private Calendar date;
-    public TopUpHistory(double balance,Calendar date){
+
+    public TopUpHistory(double balance, Calendar date) {
         this.balance = balance;
         this.date = date;
     }
