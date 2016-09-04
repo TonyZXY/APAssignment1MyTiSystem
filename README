@@ -1,0 +1,15 @@
+README
+
+This is a file that contains some problems of this MyTiSystem.
+
+First, this is a Assignment of Advanced Programming course.
+******************************************************************
+
+There are many method that never used.
+The default setting of the purchase valid time is 00:00 to 24:00 as one day.
+If purchase a one day pass, it will valid for onr day to 24:00.
+
+Many admin funcation already have method to support, but not connect yet.
+Such as setting ticket's price.
+
+Knew problem is that this project is not finished yet...
