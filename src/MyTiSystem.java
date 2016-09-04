@@ -98,9 +98,9 @@ public class MyTiSystem {
                 cardInfo();
                 m = new Scanner(System.in).nextInt();
                 switch (m) {
-//                    case 1:
-//                        recent10TravelHistory(id);
-//                        break;
+                    case 1:
+                        recent10TravelHistory(id);
+                        break;
                     case 2:
                         recent10TopUpHistory(id);
                         break;
@@ -122,7 +122,7 @@ public class MyTiSystem {
     }
 
     private void recent10TopUpHistory(String id) {
-        int i = UsersData.users.get(id).historySize();
+        int i = UsersData.users.get(id).topUpHistorySize();
         if (i > 10) {
             for (int x = 0; x < 10; x++) {
                 double balance = UsersData.users.get(id).getTopUpHistories().get(i - x - 1).getBalance();
@@ -137,6 +137,48 @@ public class MyTiSystem {
                 System.out.println("TopUp $" + balance + ", at Time:" + date);
             }
             menuRun();
+        }
+    }
+
+    private String generateType(char duration, int zone) {
+        String type = null;
+        if (duration == 'H' && zone == 1) {
+            type = "Zone One 2 Hours Pass";
+        }
+        if (duration == 'H' && zone == 2) {
+            type = "Zone Two 2 Hours Pass";
+        }
+        if (duration == 'D' && zone == 1) {
+            type = "Zone One Day Pass";
+        }
+        if (duration == 'D' && zone == 2) {
+            type = "Zone Two Day Pass";
+        }
+        return type;
+    }
+
+    private void recent10TravelHistory(String id) {
+        int i = UsersData.users.get(id).historySize();
+        if (i > 0) {
+            System.out.println("Your recent 10 travel pass history:");
+            System.out.println("Time                Type");
+            for (int x = 0; x < 10; x++) {
+                Date date = UsersData.users.get(id).getHistory().get(i - x - 1).getCalendar().getTime();
+                char duration = UsersData.users.get(id).getHistory().get(i - x - 1).getDuration();
+                int zone = UsersData.users.get(id).getHistory().get(i - x - 1).getZone();
+                String type = generateType(duration, zone);
+                System.out.println(date + "     " + type);
+            }
+        } else {
+            System.out.println("Your recent 10 travel pass history:");
+            System.out.println("Time                Type");
+            for (int y = i; y > 0; y--) {
+                Date date = UsersData.users.get(id).getHistory().get(y - 1).getCalendar().getTime();
+                char duration = UsersData.users.get(id).getHistory().get(y - 1).getDuration();
+                int zone = UsersData.users.get(id).getHistory().get(y - 1).getZone();
+                String type = generateType(duration, zone);
+                System.out.println(date + "     " + type);
+            }
         }
     }
 
@@ -378,10 +420,10 @@ public class MyTiSystem {
                 Calendar date = Calendar.getInstance();
                 if (Objects.equals(endName, null)) {
                     UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, type));  //add history
-                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, type)));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id, new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, type)));
                 } else {
                     UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, endName, type));
-                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, endName, type)));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id, new TwoHoursPassZone1(date, 'H', 1, zoneOneTwoHoursPassPrice * rate, thisStop, endName, type)));
                 }
                 System.out.println("You successfully purchase 2 hours Zone 1 travel Pass.");
                 printBlackLine();
@@ -404,10 +446,10 @@ public class MyTiSystem {
                 Calendar date = Calendar.getInstance();
                 if (Objects.equals(endName, null)) {
                     UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, type)); //add history
-                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, type)));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id, new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, type)));
                 } else {
                     UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, endName, type));
-                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, endName, type)));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id, new TwoHoursPassZone2(date, 'H', 2, zoneTwoTwoHoursPassPrice * rate, thisStop, endName, type)));
                 }
                 System.out.println("You successfully purchase 2 hours Zone 1 & Zone 2 travel Pass.");
                 printBlackLine();

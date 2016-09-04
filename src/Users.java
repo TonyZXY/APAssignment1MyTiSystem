@@ -75,4 +75,8 @@ public class Users {
     public int historySize(){
         return history.size();
     }
+
+    public int topUpHistorySize(){
+        return topUpHistories.size();
+    }
 }

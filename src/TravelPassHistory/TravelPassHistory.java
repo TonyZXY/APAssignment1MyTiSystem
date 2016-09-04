@@ -9,6 +9,14 @@ import TravelPass.TravelPass;
  * Created by TonyZheng on 3/09/2016.
  */
 public class TravelPassHistory {
+    public String getId() {
+        return id;
+    }
+
+    public TravelPass getTravelPass() {
+        return travelPass;
+    }
+
     String id;
     TravelPass travelPass;
 
