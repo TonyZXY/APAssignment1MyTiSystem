@@ -335,6 +335,10 @@ public class MyTiSystem {
         }
     }
 
+    public void journeyPurchase(){
+
+    }
+
     private void travelPassPurchase() { //check user info
         String userID;
         printBlackLine();
