@@ -9,14 +9,14 @@ import java.util.Calendar;
  */
 public class AllDayPassZone1 extends TravelPass {
     double price;
-    
-    public AllDayPassZone1(Calendar calendar,char duration,int zone,double price,String startName,String endName,char type){
-        super(calendar,duration,zone,startName,endName,type);
+
+    public AllDayPassZone1(Calendar calendar, char duration, int zone, double price, String startName, String endName, char type) {
+        super(calendar, duration, zone, startName, endName, type);
         this.price = price;
     }
 
-    public AllDayPassZone1(Calendar calendar,char duration,int zone,double price,String startName,char type){
-        super(calendar,duration,zone,startName,type);
+    public AllDayPassZone1(Calendar calendar, char duration, int zone, double price, String startName, char type) {
+        super(calendar, duration, zone, startName, type);
         this.price = price;
     }
 }

@@ -11,19 +11,19 @@ import TravelPassHistory.TravelPassHistory;
  */
 public class MyTiSystem {
 
-    public void setZoneOneOneDayPassPrice(double zoneOneOneDayPassPrice) {
+    private void setZoneOneOneDayPassPrice(double zoneOneOneDayPassPrice) {
         this.zoneOneOneDayPassPrice = zoneOneOneDayPassPrice;
     }
 
-    public void setZoneOneTwoHoursPassPrice(double zoneOneTwoHoursPassPrice) {
+    private void setZoneOneTwoHoursPassPrice(double zoneOneTwoHoursPassPrice) {
         this.zoneOneTwoHoursPassPrice = zoneOneTwoHoursPassPrice;
     }
 
-    public void setZoneTwoOneDayPassPrice(double zoneTwoOneDayPassPrice) {
+    private void setZoneTwoOneDayPassPrice(double zoneTwoOneDayPassPrice) {
         this.zoneTwoOneDayPassPrice = zoneTwoOneDayPassPrice;
     }
 
-    public void setZoneTwoTwoHoursPassPrice(double zoneTwoTwoHoursPassPrice) {
+    private void setZoneTwoTwoHoursPassPrice(double zoneTwoTwoHoursPassPrice) {
         this.zoneTwoTwoHoursPassPrice = zoneTwoTwoHoursPassPrice;
     }
 
@@ -236,18 +236,19 @@ public class MyTiSystem {
             runAdminMenu();
         }
     }
-//*************************change Price *****************************
+
+    //*************************change Price *****************************
     private void changePrice() {  //change price of ticket
         System.out.println("Current price is");
-        System.out.println("1.Two Hours Zone 1:"+zoneOneTwoHoursPassPrice);
-        System.out.println("2.Two Hours Zone 2:"+zoneTwoTwoHoursPassPrice);
-        System.out.println("3.One Day   Zone 1:"+zoneOneOneDayPassPrice);
-        System.out.println("4.One Day   Zone 2:"+zoneTwoOneDayPassPrice);
-        try{
+        System.out.println("1.Two Hours Zone 1:" + zoneOneTwoHoursPassPrice);
+        System.out.println("2.Two Hours Zone 2:" + zoneTwoTwoHoursPassPrice);
+        System.out.println("3.One Day   Zone 1:" + zoneOneOneDayPassPrice);
+        System.out.println("4.One Day   Zone 2:" + zoneTwoOneDayPassPrice);
+        try {
             System.out.println("Witch to change:");
             System.out.println("Or enter 0 to Exit");
             int m = new Scanner(System.in).nextInt();
-            switch(m){
+            switch (m) {
                 case 1:
                     set1();
                     break;
@@ -267,59 +268,59 @@ public class MyTiSystem {
                     System.out.println("Invalid input. Try again");
                     changePrice();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Try again");
             changePrice();
         }
     }
 
-    private void set1(){
-        try{
+    private void set1() {
+        try {
             System.out.println("Enter New Zone 1, 2 hours Price:");
             double price = Double.parseDouble(new Scanner(System.in).next());
             setZoneOneTwoHoursPassPrice(price);
-            System.out.println("Current Zone 1, 2 hours Price:"+ zoneOneTwoHoursPassPrice);
+            System.out.println("Current Zone 1, 2 hours Price:" + zoneOneTwoHoursPassPrice);
             runAdminMenu();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Try again");
             set1();
         }
     }
 
-    private void set2(){
-        try{
+    private void set2() {
+        try {
             System.out.println("Enter New Zone 2, 2 hours Price:");
             double price = Double.parseDouble(new Scanner(System.in).next());
             setZoneTwoTwoHoursPassPrice(price);
-            System.out.println("Current Zone 2, 2 hours Price:"+ zoneTwoTwoHoursPassPrice);
+            System.out.println("Current Zone 2, 2 hours Price:" + zoneTwoTwoHoursPassPrice);
             runAdminMenu();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Try again");
             set2();
         }
     }
 
-    private void set3(){
-        try{
+    private void set3() {
+        try {
             System.out.println("Enter New Zone 1, One Day Price:");
             double price = Double.parseDouble(new Scanner(System.in).next());
             setZoneOneOneDayPassPrice(price);
-            System.out.println("Current Zone 1, One Day Price:"+ zoneOneOneDayPassPrice);
+            System.out.println("Current Zone 1, One Day Price:" + zoneOneOneDayPassPrice);
             runAdminMenu();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Try again");
             set3();
         }
     }
 
-    private void set4(){
-        try{
+    private void set4() {
+        try {
             System.out.println("Enter New Zone 2, One Day Price:");
             double price = Double.parseDouble(new Scanner(System.in).next());
             setZoneTwoOneDayPassPrice(price);
-            System.out.println("Current Zone 2, One Day Price:"+ zoneTwoOneDayPassPrice);
+            System.out.println("Current Zone 2, One Day Price:" + zoneTwoOneDayPassPrice);
             runAdminMenu();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Try again");
             set4();
         }
@@ -360,7 +361,7 @@ public class MyTiSystem {
     private HashMap<String, Integer> stationStartStatistics = new HashMap<>();
     private HashMap<String, Integer> stationEndStatistics = new HashMap<>();
 
-    private void addStationName(){
+    private void addStationName() {
         for (int i = 0; i < UsersData.stationsName.size(); i++) {
             String stationName = UsersData.stationsName.get(i);
             stationStartStatistics.put(stationName, 0);
@@ -368,28 +369,29 @@ public class MyTiSystem {
         }
     }
 
-    private void addStationStart(){
+    private void addStationStart() {
         for (int i = 0; i < TravelPassHistory.travelPassHistory.size(); i++) {
             String stationName = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getStartName();
             stationStartStatistics.put(stationName, stationStartStatistics.get(stationName) + 1);
         }
     }
 
-    private void addStationEnd(){
-        for(int i=0;i<TravelPassHistory.travelPassHistory.size();i++){
+    private void addStationEnd() {
+        for (int i = 0; i < TravelPassHistory.travelPassHistory.size(); i++) {
             String stationName = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getEndName();
-            stationEndStatistics.put(stationName,stationEndStatistics.get(stationName)+1);
+            stationEndStatistics.put(stationName, stationEndStatistics.get(stationName) + 1);
         }
     }
+
     private void showStationStatistics() {
         addStationName();
         addStationStart();
         addStationEnd();
-        for(int i=0;i<UsersData.stationsName.size();i++){
+        for (int i = 0; i < UsersData.stationsName.size(); i++) {
             String stationName = UsersData.stationsName.get(i);
             int start = stationStartStatistics.get(stationName);
             int end = stationEndStatistics.get(stationName);
-            System.out.println(stationName + ": " + start +" journeys start and "+ end+ "journeys end here");
+            System.out.println(stationName + ": " + start + " journeys start and " + end + "journeys end here");
         }
     }
 
@@ -494,10 +496,6 @@ public class MyTiSystem {
             System.out.println("Invalid Input, Try again.");
             menuRun();
         }
-    }
-
-    public void journeyPurchase() {
-
     }
 
     private void travelPassPurchase() { //check user info

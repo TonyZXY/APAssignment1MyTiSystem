@@ -7,7 +7,7 @@ import java.util.Calendar;
  * Created by TonyZheng on 18/08/2016.
  */
 public class TravelPass {
-//    Date date;
+    //    Date date;
     private Calendar calendar;
     private char Duration;
     private int zone;
@@ -28,7 +28,7 @@ public class TravelPass {
     private String endName;
     private char type;
 
-    TravelPass(Calendar calendar,char duration,int zone,String startName,String endName,char type){
+    TravelPass(Calendar calendar, char duration, int zone, String startName, String endName, char type) {
         this.startName = startName;
         this.endName = endName;
         this.type = type;
@@ -38,7 +38,7 @@ public class TravelPass {
         this.zone = zone;
     }
 
-    TravelPass(Calendar calendar,char duration,int zone,String startName,char type){
+    TravelPass(Calendar calendar, char duration, int zone, String startName, char type) {
         this.startName = startName;
         this.Duration = duration;
         this.zone = zone;
@@ -46,15 +46,15 @@ public class TravelPass {
         this.calendar = calendar;
     }
 
-    public Calendar getCalendar(){
+    public Calendar getCalendar() {
         return calendar;
     }
 
-    public char getDuration(){
+    public char getDuration() {
         return Duration;
     }
 
-    public int getZone(){
+    public int getZone() {
         return zone;
     }
 

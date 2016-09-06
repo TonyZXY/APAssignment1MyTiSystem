@@ -8,15 +8,16 @@ public class Station {
     public String getStationName() {
         return stationName;
     }
-    
+
     private String stationName;
-    
+
     public int getZone() {
         return zone;
     }
-    
+
     private int zone;
-    public Station(String StationName,int Zone){
+
+    public Station(String StationName, int Zone) {
         this.stationName = StationName;
         this.zone = Zone;
     }
