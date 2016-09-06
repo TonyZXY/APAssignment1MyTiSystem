@@ -11,6 +11,19 @@ public class TravelPass {
     private Calendar calendar;
     private char Duration;
     private int zone;
+
+    public String getStartName() {
+        return startName;
+    }
+
+    public String getEndName() {
+        return endName;
+    }
+
+    public char getType() {
+        return type;
+    }
+
     private String startName;
     private String endName;
     private char type;
