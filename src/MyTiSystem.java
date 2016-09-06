@@ -38,6 +38,7 @@ public class MyTiSystem {
         System.out.println("3. Show remaining credit");
 //        System.out.println("4. Purchase a Journey using a MyTi card");
         System.out.println("5. Show Card Info");
+        System.out.println("6. Order a travel pass");
         System.out.println("7. Admin mod");
         System.out.println("0. Quit");
         System.out.println("Choose an option:");
@@ -316,6 +317,9 @@ public class MyTiSystem {
                     case 5:
                         cardInfoMenu();
                         break;
+                    case 6:
+                        travelPassOrdered();
+                        break;
                     case 7:
                         adminMenu();
                         break;
@@ -335,14 +339,14 @@ public class MyTiSystem {
         }
     }
 
-    public void journeyPurchase(){
+    public void journeyPurchase() {
 
     }
 
     private void travelPassPurchase() { //check user info
         String userID;
         printBlackLine();
-        System.out.print("Which card ID: ");
+        System.out.println("Which card ID: ");
         userID = new Scanner(System.in).nextLine();
         double balance = UsersData.checkUserID(userID);
         if (balance != -1) {
@@ -352,6 +356,177 @@ public class MyTiSystem {
         } else {
             printBlackLine();
             System.err.println("User ID not found. Try again.");
+            menuRun();
+        }
+    }
+
+    private void travelPassOrdered(){
+        String id;
+        printBlackLine();
+        System.out.println("Which card ID: ");
+        id = new Scanner(System.in).nextLine();
+        double balance = UsersData.checkUserID(id);
+        if(balance !=-1){
+            char type = UsersData.users.get(id).getType();
+            double rate = UsersData.getRate(id);
+            travelPassOrderedMenu(id,balance,type,rate);
+        }else{
+            printBlackLine();
+            System.out.println("User ID not found. Try again");
+            menuRun();
+        }
+    }
+
+    private void travelPassOrderedMenu(String id,double balance,char type,double rate){
+        char duration ='O';
+        int zone = 0;
+        try{
+            int d;
+            int z;
+            do{
+                purchaseMenu();
+                d = new Scanner(System.in).nextInt();
+                switch (d){
+                    case 1:
+                        duration = 'H';
+                        break;
+                    case 2:
+                        duration = 'D';
+                        break;
+                    case 0:
+                        menuRun();
+                        break;
+                    default:
+                        System.out.println("Invalid input, try again!");
+                        travelPassOrderedMenu(id,balance,type,rate);
+                }
+            }while (d!=0);
+            do{
+                zoneMenu();
+                z = new Scanner(System.in).nextInt();
+                switch (z){
+                    case 1:
+                        zone = 1;
+                        break;
+                    case 2:
+                        zone=2;
+                        break;
+                    case 3:
+                        selectByStation(id,balance,type,rate,duration);
+                        break;
+                    case 0:
+                        menuRun();
+                        break;
+                    default:
+                        System.out.println("Invalid input,try again!");
+                        travelPassOrderedMenu(id,balance,type,rate);
+                }
+            }while(z!=0);
+            travelPassOrder(id,balance,type,rate,duration,zone);
+        }catch (Exception e){
+            System.out.println("Invalid input, try again!");
+            travelPassOrderedMenu(id,balance,type,rate);
+        }
+    }
+
+    private void selectByStation(String id,double balance,char type,double rate,char duration) {
+        try {
+            System.out.println("Station Name    :  Zone");
+            for (int i = 0; i < UsersData.stationsName.size(); i++) {
+                System.out.println(UsersData.stationsName.get(i));
+            }
+            System.out.println("Please enter station name:");
+            String destnationStop = new Scanner(System.in).nextLine();
+            int thisZone = UsersData.station.get(thisStop).getZone();
+            int destnationZone = UsersData.station.get(destnationStop).getZone();
+            if (thisZone == 1 && destnationZone == 1) {
+                int zone = 1;
+                travelPassOrder(id, balance, type, rate, duration, zone);
+            } else if ((thisZone == 1 && destnationZone == 2) || (thisZone == 2 && destnationZone == 1) || (thisZone == 2 && destnationZone == 2)) {
+                int zone = 2;
+                travelPassOrder(id, balance, type, rate, duration, zone);
+            }
+        } catch (Exception e) {
+            printBlackLine();
+            System.out.println("Invalid input,try again");
+            selectByStation(id,balance,type,rate,duration);
+        }
+    }
+
+    private void travelPassOrder(String id,double balance,char type,double rate,char duration,int zone){
+        try{
+            System.out.println("which day you would like to travel");
+            System.out.println("Enter the day you would like to travel:(day of the month)");
+            int day = new Scanner(System.in).nextInt();
+//            System.out.println("Enter the day you would like to travel:(Day of the Week");
+//            String day = new Scanner(System.in).nextLine();
+            printBlackLine();
+            System.out.println("Enter the TIME you would like to travel:(HHMM)");
+            int time = new Scanner(System.in).nextInt();
+            int hour = time/100;
+            int min = time%100;
+            printBlackLine();
+            Calendar date = Calendar.getInstance();
+            date.set(Calendar.DAY_OF_MONTH,day);
+//            date.set(Calendar.DAY_OF_WEEK.day);
+            date.set(Calendar.HOUR_OF_DAY,hour);
+            date.set(Calendar.MINUTE,min);
+            switchPurchase(id,balance,type,rate,duration,zone,date);
+        }catch (Exception e){
+            System.out.println("Invalid input,Try again");
+            travelPassOrder(id,balance,type,rate,duration,zone);
+        }
+    }
+
+    private void switchPurchase(String id,double balance,char type,double rate,char duration,int zone,Calendar date){
+        try{
+            if(duration=='H'&&zone==1){
+                if(balance - zoneOneTwoHoursPassPrice*rate<0){
+                    throw new NoEnoughFundExcpetion("No enough fund, please TopUp first.");
+                }else{
+                    UsersData.users.get(id).purchase(zoneOneTwoHoursPassPrice*rate);
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone1(date,'H',1,zoneOneTwoHoursPassPrice*rate,thisStop,type));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone1(date,'H',1,zoneOneTwoHoursPassPrice*rate,thisStop,type)));
+                    System.out.println("You successfully purchase 2 hours Zone 1 travel Pass.");
+                    printBlackLine();
+                    menuRun();
+                }
+            }else if(duration=='H'&&zone==2){
+                if(balance - zoneTwoTwoHoursPassPrice*rate <0){
+                    throw new NoEnoughFundExcpetion("No enough fund, please TopUp first.");
+                }else {
+                    UsersData.users.get(id).purchase(zoneTwoTwoHoursPassPrice*rate);
+                    UsersData.users.get(id).getHistory().add(new TwoHoursPassZone2(date,'H',2,zoneTwoTwoHoursPassPrice*rate,thisStop,type));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new TwoHoursPassZone2(date,'H',2,zoneTwoTwoHoursPassPrice*rate,thisStop,type)));
+                    System.out.println("You successfully purchase 2 hours Zone 2 travel Pass.");
+                    printBlackLine();
+                    menuRun();
+                }
+            }else if(duration=='D'&&zone==1){
+                if(balance - zoneOneOneDayPassPrice*rate<0){
+                    throw new NoEnoughFundExcpetion("No enough fund, please TopUp first.");
+                }else {
+                    UsersData.users.get(id).purchase(zoneOneOneDayPassPrice*rate);
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone1(date,'D',1,zoneOneOneDayPassPrice*rate,thisStop,type));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new AllDayPassZone1(date,'D',1,zoneOneOneDayPassPrice*rate,thisStop,type)));
+                    System.out.println("You successfully purchase 1 day Zone 1 travel Pass.");
+                    printBlackLine();
+                    menuRun();
+                }
+            }else if(duration=='D'&&zone==2){
+                if(balance-zoneTwoOneDayPassPrice*rate<0){
+                    throw new NoEnoughFundExcpetion("No enough fund, please TopUp first.");
+                }else {
+                    UsersData.users.get(id).purchase(zoneTwoOneDayPassPrice*rate);
+                    UsersData.users.get(id).getHistory().add(new AllDayPassZone2(date,'D',2,zoneTwoOneDayPassPrice*rate,thisStop,type));
+                    TravelPassHistory.travelPassHistory.add(new TravelPassHistory(id,new AllDayPassZone2(date,'D',2,zoneTwoOneDayPassPrice*rate,thisStop,type)));
+                    System.out.println("You successfully purchase 1 day Zone 2 travel Pass.");
+                    printBlackLine();
+                    menuRun();
+                }
+            }
+        }catch (NoEnoughFundExcpetion err){
+            System.err.println(err);
             menuRun();
         }
     }
