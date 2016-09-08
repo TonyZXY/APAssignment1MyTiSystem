@@ -337,7 +337,7 @@ public class MyTiSystem {
 
     //*****************************  Print All Journeys ********************
     private void printAllJorneys() {
-        System.out.println("        ID       Ticket Type    Start Station     Destination Station    Date");
+        System.out.println("        ID       Ticket Type    Start Station     Destination Station    Price   Date");
         for (int i = 0; i < TravelPassHistory.travelPassHistory.size(); i++) {
             String ticketType = null;
             String id = TravelPassHistory.travelPassHistory.get(i).getId();
@@ -346,6 +346,7 @@ public class MyTiSystem {
             String startStation = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getStartName();
             String destinationStation = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getEndName();
             Calendar date = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getCalendar();
+            double price = TravelPassHistory.travelPassHistory.get(i).getTravelPass().getPrice();
             if (type == 'H' && zone == 1) {
                 ticketType = "Zone 1   Two Hours";
             }
@@ -358,7 +359,7 @@ public class MyTiSystem {
             if (type == 'H' && zone == 2) {
                 ticketType = "Zone1+2  One Day";
             }
-            System.out.println(i + " " + id + " " + ticketType + " " + startStation + " " + destinationStation + " " + date.getTime());
+            System.out.println(i + " " + id + " " + ticketType + " " + startStation + " " + destinationStation + " " +price+"  "+ date.getTime());
         }
         printBlackLine();
         System.out.println("Press Any key to continue");

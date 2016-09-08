@@ -9,7 +9,18 @@ There are many method that never used.
 The default setting of the purchase valid time is 00:00 to 24:00 as one day.
 If purchase a one day pass, it will valid for onr day to 24:00.
 
-Many admin funcation already have method to support, but not connect yet.
+Many admin function already have method to support, but not connect yet.
 Such as setting ticket's price.
 
 Knew problem is that this project is not finished yet...
+
+Many main Function is in MyTiSystem class, but some function is in UsersData class,
+such as get rate for concession. simply change the rate in getRate method in UsersData
+can change the whole rate of Ticket.
+
+Some function in MyTiSystem has been commented but these function leave there for further used.
+
+Comment in MyTiSystem class may clearly show the function and link the methods up.
+
+
+If there is Any question, Please Email S3568171@student.rmit.edu.au (Xuyang Zheng)

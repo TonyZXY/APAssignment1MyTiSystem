@@ -69,12 +69,17 @@ public class UsersData {
     static double getRate(String ID) { //here is rate setting
         double rate = 1;
         char type = users.get(ID).getType();
+        Calendar date=Calendar.getInstance();
         if (type == 'A') {
             rate = 1.0;
-        } else if (type == 'C') {
+        }if (type == 'C') {
             rate = 0.8;
-        } else if (type == 'S') {
+        }if (type == 'S') {
             rate = 0.5;
+        }if(type =='C'&&date.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+            rate = 0.0;
+        }if(type =='S'&&date.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+            rate = 0.0;
         }
         return rate;
     }
