@@ -24,11 +24,17 @@ public class TravelPass {
         return type;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    private double price;
+
     private String startName;
     private String endName;
     private char type;
 
-    TravelPass(Calendar calendar, char duration, int zone, String startName, String endName, char type) {
+    public TravelPass(Calendar calendar, char duration, int zone, String startName, String endName, char type,double price) {
         this.startName = startName;
         this.endName = endName;
         this.type = type;
@@ -36,15 +42,18 @@ public class TravelPass {
         this.calendar = calendar;
         this.Duration = duration;
         this.zone = zone;
+        this.price=price;
     }
 
-    TravelPass(Calendar calendar, char duration, int zone, String startName, char type) {
+    public TravelPass(Calendar calendar, char duration, int zone, String startName, char type,double price) {
         this.startName = startName;
         this.Duration = duration;
         this.zone = zone;
         this.type = type;
         this.calendar = calendar;
+        this.price=price;
     }
+
 
     public Calendar getCalendar() {
         return calendar;

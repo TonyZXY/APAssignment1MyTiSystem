@@ -50,22 +50,17 @@ public class UsersData {
     }
 
     static boolean checkUser(String id) {
-        boolean valid = true;
-        try {
-            double balance = users.get(id).getBalance();
-        } catch (Exception e) {
-            valid = false;
+        boolean valid = false;
+        if(users.containsKey(id)){
+            valid = true;
         }
         return valid;
     }
 
     static boolean checkStation(String stationName) {
         boolean valid = false;
-        try {
-            int zone = station.get(stationName).getZone();
+        if(station.containsKey(stationName)){
             valid = true;
-        } catch (Exception e) {
-            valid = false;
         }
         return valid;
     }
