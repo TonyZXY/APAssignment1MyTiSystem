@@ -16,14 +16,6 @@ public class TopUpHistory {
         return date.getTime();
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public void setDate(Calendar date) {
-        this.date = date;
-    }
-
     private double balance;
     private Calendar date;
 
