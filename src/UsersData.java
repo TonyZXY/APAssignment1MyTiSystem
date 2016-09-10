@@ -65,21 +65,58 @@ public class UsersData {
         return valid;
     }
 
+    public static double getJrate() {
+        return Jrate;
+    }
+
+    public static double getSrate() {
+        return Srate;
+    }
+
+    public static double getArate() {
+        return Arate;
+    }
+
+    public static double getSSrate() {
+        return SSrate;
+    }
+
+    public static void setJrate(double jrate) {
+        Jrate = jrate;
+    }
+
+    public static void setSrate(double srate) {
+        Srate = srate;
+    }
+
+    public static void setArate(double arate) {
+        Arate = arate;
+    }
+
+    public static void setSSrate(double SSrate) {
+        UsersData.SSrate = SSrate;
+    }
+
+    private static double Jrate = 0.5;
+    private static double Srate = 0.5;
+    private static double Arate = 1.0;
+    private static double SSrate = 0.0;
+
 
     static double getRate(String ID) { //here is rate setting
         double rate = 1;
         char type = users.get(ID).getType();
         Calendar date=Calendar.getInstance();
         if (type == 'A') {
-            rate = 1.0;
+            rate = Arate;
         }if (type == 'C') {
-            rate = 0.8;
+            rate = Jrate;
         }if (type == 'S') {
-            rate = 0.5;
-        }if(type =='C'&&date.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
-            rate = 0.0;
+            rate = Srate;
+//        }if(type =='C'&&date.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+//            rate = 0.0;
         }if(type =='S'&&date.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
-            rate = 0.0;
+            rate = SSrate;
         }
         return rate;
     }
