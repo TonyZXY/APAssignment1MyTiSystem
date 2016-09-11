@@ -13,9 +13,8 @@ If purchase a one day pass, it will valid for onr day to 24:00.
 //Such as setting ticket's price.
 Setting ticket's price now available.
 
-
 //Knew problem is that this project is not finished yet...
-The project are almost finished.
+The project is almost finished.
 
 When testing the program. Use the option that marked as testing, because the non-testing option is automatic generate
 time and station. These option is design for "real use".
@@ -23,11 +22,15 @@ time and station. These option is design for "real use".
 When running the program, add User and Station at first, or simply run main method in Test class, or obey the format
 in Test class.
 
+** The TravelPass History and Station Statistics report may cause null pointer exception (no testing yet). **
+But the auto generate time purchase function looks good.
 
 Many main Function is in MyTiSystem class, but some function is in UsersData class,
-such as get rate for concession. //simply change the rate in getRate method in UsersData
-can change the whole rate of Ticket.
+such as get rate for concession.
+//simply change the rate in getRate method in UsersData can change the whole rate of Ticket.
 Now change concession is available using Admin option.
+The class Data is no used in this project, this class is design for writing and reading data from file or database,
+and the class is not finished, maybe can be used in other version.
 
 Some function in MyTiSystem has been commented but these function leave there for further used.
 
@@ -38,7 +41,7 @@ Many code in purchase methods can be reusable, but time limitation.
 These can be fix if there are more time in coding.
 
 The code is also available in GitHub ( https://github.com/TonyZXY/APAssignment1MyTiSystem )
-(Used to be in ( https://github.com/XuyangZheng/APAss1 )
+(Used to be in ( https://github.com/XuyangZheng/APAss1 ))
 Progress can be check in GitHub, there are also some very briefly comment.
 
 If there is Any question, Please Email S3568171@student.rmit.edu.au (Xuyang Zheng)

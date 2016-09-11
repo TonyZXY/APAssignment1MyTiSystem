@@ -858,7 +858,7 @@ public class MyTiSystem {
             double validPrice = checkValidTicketPrice(id, 1);
             double amount = zoneOneTwoHoursPassPrice * rate;
             if (validPrice == 10) {
-                System.out.println("You already have Day Pass");
+                System.out.println("You already have a Travel Pass");
                 menuRun();
             } else if (validPrice != 0) {
                 if (amount - validPrice < 0) {
@@ -920,7 +920,7 @@ public class MyTiSystem {
             double validPrice = checkValidTicketPrice(id, 2);
             double amount = zoneTwoTwoHoursPassPrice * rate;
             if (validPrice == 10) {
-                System.out.println("You already have Day Pass");
+                System.out.println("You already have a Travel Pass");
                 menuRun();
             } else if (amount - validPrice > 0) {
                 if (balance - amount + validPrice < 0) {
@@ -1009,7 +1009,7 @@ public class MyTiSystem {
             double validPrice = checkValidTicketPrice(id, 1);
             double amount = zoneOneOneDayPassPrice * rate;
             if (validPrice == 10) {
-                System.out.println("You already have Day Pass");
+                System.out.println("You already have a Travel Pass");
                 menuRun();
             } else if (validPrice != 0) {
                 if (balance - amount + validPrice < 0) {
@@ -1054,7 +1054,7 @@ public class MyTiSystem {
             double validPrice = checkValidTicketPrice(id, 2);
             double amount = zoneOneOneDayPassPrice * rate;
             if (validPrice == 10) {
-                System.out.println("You already have Day Pass");
+                System.out.println("You already have a Travel Pass");
                 menuRun();
             } else if (validPrice != 0) {
                 if (balance - amount + validPrice < 0) {
