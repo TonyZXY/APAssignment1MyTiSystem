@@ -1,3 +1,5 @@
+package MyTi;
+
 /**
  * Project APAss1,
  * Created by TonyZheng on 22/08/2016.

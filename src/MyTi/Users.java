@@ -1,5 +1,7 @@
-import TopUpHistory.TopUpHistory;
-import TravelPass.TravelPass;
+package MyTi;
+
+import MyTi.TopUpHistory.TopUpHistory;
+import MyTi.TravelPass.TravelPass;
 
 import java.util.ArrayList;
 

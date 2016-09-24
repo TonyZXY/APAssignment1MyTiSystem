@@ -1,6 +1,6 @@
 README
 
-This is a file that contains some problems of this MyTiSystem.
+This is a file that contains some problems of this MyTi.MyTiSystem.
 
 First, this is a Assignment of Advanced Programming course.
 ******************************************************************
@@ -21,22 +21,22 @@ The project is almost finished.
 When testing the program. Use the option that marked as testing, because the non-testing option is automatic generate
 time and station. These option is design for "real use".
 
-When running the program, add User and Station at first, or simply run main method in Test class, or obey the format
+When running the program, add User and MyTi.Station at first, or simply run main method in Test class, or obey the format
 in Test class.
 
-** The TravelPass History and Station Statistics report may cause null pointer exception (no testing yet). **
+** The MyTi.TravelPass History and MyTi.Station Statistics report may cause null pointer exception (no testing yet). **
 But the auto generate time purchase function looks good.
 
-Many main Function is in MyTiSystem class, but some function is in UsersData class,
+Many main Function is in MyTi.MyTiSystem class, but some function is in MyTi.UsersData class,
 such as get rate for concession.
-//simply change the rate in getRate method in UsersData can change the whole rate of Ticket.
+//simply change the rate in getRate method in MyTi.UsersData can change the whole rate of Ticket.
 Now change concession is available using Admin option.
 The class Data is no used in this project, this class is design for writing and reading data from file or database,
 and the class is not finished, maybe can be used in other version.
 
-Some function in MyTiSystem has been commented but these function leave there for further used.
+Some function in MyTi.MyTiSystem has been commented but these function leave there for further used.
 
-Comment in MyTiSystem class may clearly show the function and link the methods up.
+Comment in MyTi.MyTiSystem class may clearly show the function and link the methods up.
 
 
 Many code in purchase methods can be reusable, but time limitation.

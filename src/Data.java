@@ -49,7 +49,7 @@ public class Data {
 //        double b = 0;
 //        if(balance==-1){
 //            System.out.println("Invalid Username, Try again!");
-//            MyTiSystem.checkUser();
+//            MyTi.MyTiSystem.checkUser();
 //        }else b = balance;
 //        return b;
 //    }

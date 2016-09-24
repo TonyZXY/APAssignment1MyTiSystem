@@ -1,3 +1,6 @@
+import MyTi.MyTiSystem;
+import MyTi.UsersData;
+
 /**
  * Project APAss1,
  * Created by TonyZheng on 19/08/2016.
@@ -16,9 +19,9 @@ public class Test {
 
             a.addNewUser("abc", "abce", "abced", 40.0, 'J');
             a.addNewUser("lc", "Lawrence Cavedon", "lawrence.cavedon@rmit.edu.au", 'A');
-//            System.out.println("Station Name    :  Zone");
-//            for(int i=0;i<UsersData.stationsName.size();i++){
-//                System.out.println(UsersData.stationsName.get(i));
+//            System.out.println("MyTi.Station Name    :  Zone");
+//            for(int i=0;i<MyTi.UsersData.stationsName.size();i++){
+//                System.out.println(MyTi.UsersData.stationsName.get(i));
 //            }
 
 

@@ -1,8 +1,8 @@
-package TravelPassHistory;
+package MyTi.TravelPassHistory;
 
 import java.util.ArrayList;
 
-import TravelPass.TravelPass;
+import MyTi.TravelPass.TravelPass;
 
 /**
  * Project APAssignment1MyTiSystem

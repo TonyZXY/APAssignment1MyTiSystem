@@ -1,9 +1,10 @@
-import TopUpHistory.TopUpHistory;
-import TravelPass.TravelPass;
+package MyTi;
+
+import MyTi.TopUpHistory.TopUpHistory;
 
 import java.util.*;
 
-import Station.*;
+import MyTi.Station.*;
 
 /**
  * Project APAss1,
@@ -13,12 +14,12 @@ public class UsersData {
     // this is users data storage
     static HashMap<String, Users> users = new HashMap<>();
 
-    static void addNewUser(String id, String userName, String email, double balance, char type) {
+    public static void addNewUser(String id, String userName, String email, double balance, char type) {
         users.put(id, new Users(id, userName, email, balance, type));
         userNames.add(id);
     }//this add method is for test.
 
-    static void addNewUser(String id, String userName, String email, char type) {
+    public static void addNewUser(String id, String userName, String email, char type) {
         users.put(id, new Users(id, userName, email, type));
         userNames.add(id);
     }
@@ -127,7 +128,7 @@ public class UsersData {
     static HashMap<String, Station> station = new HashMap<>();
     static ArrayList<String> stationsName = new ArrayList<>();
 
-    void addStation(String name, int zone) {
+    public void addStation(String name, int zone) {
         station.put(name, new Station(name, zone));
         stationsName.add(name + "            " + zone);
     }

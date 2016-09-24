@@ -1,4 +1,4 @@
-package Station;
+package MyTi.Station;
 
 /**
  * Project APAss1,

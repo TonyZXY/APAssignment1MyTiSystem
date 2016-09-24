@@ -1,9 +1,10 @@
+package MyTi;
+
 import java.util.*;
 
 
-import TravelPass.*;
-import TravelPassHistory.TravelPassHistory;
-import com.apple.eawt.AppEvent;
+import MyTi.TravelPass.*;
+import MyTi.TravelPassHistory.TravelPassHistory;
 
 /**
  * Project APAss1,
@@ -59,20 +60,20 @@ public class MyTiSystem {
         System.out.println("Which zone: ");
         System.out.println("1. Zone 1");
         System.out.println("2. Zone 1 and 2");
-        System.out.println("3. Select by Station");
+        System.out.println("3. Select by MyTi.Station");
         System.out.println("0. Cancel");
         System.out.println("Your option:");
     }
 
     private void admin() {
         System.out.println("1. Print all Journeys made using all MyTi cards");
-        System.out.println("2. Show Station statistics");
+        System.out.println("2. Show MyTi.Station statistics");
         System.out.println("3. Add a new User");
 //        System.out.println("4. Create a new MyTi Card");
 //        System.out.println("5. Attach a MyTi Card to a User");
         System.out.println("5. Change Rate");
         System.out.println("6. Change Current price");
-        System.out.println("7. Change Current Station");
+        System.out.println("7. Change Current MyTi.Station");
         System.out.println("0. Exit");
         System.out.println("Your option:");
     }
@@ -172,7 +173,7 @@ public class MyTiSystem {
 
     private void recent10TravelHistory(String id) {
         int i = UsersData.users.get(id).historySize();
-        if (i > 0) {
+        if (i > 10) {
             System.out.println("Your recent 10 travel pass history:");
             System.out.println("Time                Type");
             for (int x = 0; x < 10; x++) {
@@ -431,7 +432,7 @@ public class MyTiSystem {
 
     //*****************************  Print All Journeys ********************
     private void printAllJorneys() {
-        System.out.println("        ID       Ticket Type    Start Station     Destination Station    Price   Date");
+        System.out.println("        ID       Ticket Type    Start MyTi.Station     Destination MyTi.Station    Price   Date");
         for (int i = 0; i < TravelPassHistory.travelPassHistory.size(); i++) {
             String ticketType = null;
             String id = TravelPassHistory.travelPassHistory.get(i).getId();
@@ -502,12 +503,12 @@ public class MyTiSystem {
 
     //***************************** change station ********************
     private void changeCurrentStation() {
-        System.out.println("Current Station is: " + thisStop);
-        System.out.println("Station Name    :  Zone");
+        System.out.println("Current MyTi.Station is: " + thisStop);
+        System.out.println("MyTi.Station Name    :  Zone");
         for (int i = 0; i < UsersData.stationsName.size(); i++) {
             System.out.println(UsersData.stationsName.get(i));
         }
-        System.out.println("Enter Changed Station: ");
+        System.out.println("Enter Changed MyTi.Station: ");
         String station = new Scanner(System.in).nextLine();
         boolean valid = UsersData.checkStation(station);
         if (valid) {
@@ -520,7 +521,7 @@ public class MyTiSystem {
         }
     }
 
-    //*************************** Add Users *****************
+    //*************************** Add MyTi.Users *****************
     private void addNewUser() {
         String id;
         String userName;
@@ -557,7 +558,7 @@ public class MyTiSystem {
 
 //    private Scanner keyPad = new Scanner(System.in);
 
-    void menuRun() {
+    public void menuRun() {
         int m;
         try {
             do {
@@ -690,7 +691,7 @@ public class MyTiSystem {
 
     private void selectByStation(String id, double balance, char type, double rate, char duration) {
         try {
-            System.out.println("Station Name    :  Zone");
+            System.out.println("MyTi.Station Name    :  Zone");
             for (int i = 0; i < UsersData.stationsName.size(); i++) {
                 System.out.println(UsersData.stationsName.get(i));
             }
@@ -1097,7 +1098,7 @@ public class MyTiSystem {
 
     private void selectByStationTwoHoursPass(String id, double balance, double rate, char type) { //select by station name 2 hours pass
         try {
-            System.out.println("Station Name    :  Zone");
+            System.out.println("MyTi.Station Name    :  Zone");
             for (int i = 0; i < UsersData.stationsName.size(); i++) {
                 System.out.println(UsersData.stationsName.get(i));
             }
@@ -1128,7 +1129,7 @@ public class MyTiSystem {
 
     private void selectByStationDayPass(String id, double balance, double rate, char type) { //select by station name day pass
         try {
-            System.out.println("Station Name    :  Zone");
+            System.out.println("MyTi.Station Name    :  Zone");
             for (int i = 0; i < UsersData.stationsName.size(); i++) {
                 System.out.println(UsersData.stationsName.get(i));
             }
@@ -1193,14 +1194,17 @@ public class MyTiSystem {
             System.out.println("How much to TopUp:");
             double amount = new Scanner(System.in).nextInt();
             printBlackLine();
+            if (amount < 0) {
+                throw new TopUpException("Invalid input. try again.");
+            }
             if (amount % 5 != 0) {
                 throw new TopUpException("You can only TopUp in precise multiples of $5.00");
             } else if (amount + balance > 100) {
                 throw new OverAmountException("Your credit can not over $100");
             } else {
 //                Calendar date = Calendar.getInstance();
-//                UsersData.users.get(id).topUp(amount);
-//                UsersData.users.get(id).getTopUpHistories().add(new TopUpHistory(balance, date));//add TopUp history
+//                MyTi.UsersData.users.get(id).topUp(amount);
+//                MyTi.UsersData.users.get(id).getTopUpHistories().add(new MyTi.TopUpHistory(balance, date));//add TopUp history
 
 //      TopUp method used to use method in the comment
                 UsersData.topUp(id, amount); //topUp
@@ -1245,8 +1249,8 @@ public class MyTiSystem {
             Calendar now = Calendar.getInstance();
             Calendar ticketTime = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getCalendar();
             char ticketType = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getDuration();
-//            int ticketZone = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getZone();
-//            int thisZone = UsersData.station.get(thisStop).getZone();
+//            int ticketZone = MyTi.UsersData.users.get(id).getHistory().get(MyTi.UsersData.users.get(id).historySize() - 1).getZone();
+//            int thisZone = MyTi.UsersData.station.get(thisStop).getZone();
             //ticketTime is the most resent ticket time.
             int nowDate = now.get(Calendar.DAY_OF_YEAR);
             int ticketDate = ticketTime.get(Calendar.DAY_OF_YEAR);
@@ -1271,9 +1275,9 @@ public class MyTiSystem {
     private boolean checkZoneValid(String id) {
         boolean valid = false;
         try {
-            System.out.println("Start Station:");
+            System.out.println("Start MyTi.Station:");
             String StartStation = new Scanner(System.in).nextLine();
-            System.out.println("Destination Station:");
+            System.out.println("Destination MyTi.Station:");
             String Destination = new Scanner(System.in).nextLine();
             int startZone = UsersData.station.get(StartStation).getZone();
             int DestinationZone = UsersData.station.get(Destination).getZone();
@@ -1392,7 +1396,7 @@ public class MyTiSystem {
         try {
 //            System.out.println("Enter the day:(day of the month)");
 //            int day = new Scanner(System.in).nextInt();
-            int d = 0;
+            int d;
             do {
                 System.out.println("Enter the day:(Day of the Week");
                 String day = new Scanner(System.in).nextLine();
@@ -1441,8 +1445,8 @@ public class MyTiSystem {
         try {
             Calendar ticketTime = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getCalendar();
             char ticketType = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getDuration();
-//            int ticketZone = UsersData.users.get(id).getHistory().get(UsersData.users.get(id).historySize() - 1).getZone();
-//            int thisZone = UsersData.station.get(thisStop).getZone();
+//            int ticketZone = MyTi.UsersData.users.get(id).getHistory().get(MyTi.UsersData.users.get(id).historySize() - 1).getZone();
+//            int thisZone = MyTi.UsersData.station.get(thisStop).getZone();
             //ticketTime is the most resent ticket time.
             int nowDate = date.get(Calendar.DAY_OF_YEAR);
             int ticketDate = ticketTime.get(Calendar.DAY_OF_YEAR);
