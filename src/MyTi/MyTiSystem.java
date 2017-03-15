@@ -562,11 +562,11 @@ public class MyTiSystem {
         int m;
         try {
             do {
-                mainMenu();
-                m = new Scanner(System.in).nextInt();
-                switch (m) {
-                    case 1:
-                        travelPassPurchase();
+                mainMenu(); //这里是显示一串System.out.println();
+                m = new Scanner(System.in).nextInt(); //这里是选择输入什么数字
+                switch (m) {  //这里是你那个第一个if   这个叫switch 和if不太一样
+                    case 1:   //这里相当于if的条件
+                        travelPassPurchase(); //
                         break;
                     case 2:
                         chargeMyTiCard();

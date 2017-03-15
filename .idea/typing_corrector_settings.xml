@@ -2,5 +2,6 @@
 <project version="4">
   <component name="TypingCorrectorSettings">
     <option name="CHARS_CORRECTED" value="28" />
+    <option name="LAYOUT_CHARS_CORRECTED" value="1" />
   </component>
 </project>

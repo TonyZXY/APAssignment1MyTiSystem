@@ -17,8 +17,8 @@ public class Test {
             a.addStation("Lilydale", 2);
             a.addStation("Epping", 2);
 
-            a.addNewUser("abc", "abce", "abced", 40.0, 'J');
-            a.addNewUser("lc", "Lawrence Cavedon", "lawrence.cavedon@rmit.edu.au", 'A');
+            UsersData.addNewUser("abc", "abce", "abced", 40.0, 'J');
+            UsersData.addNewUser("lc", "Lawrence Cavedon", "lawrence.cavedon@rmit.edu.au", 'A');
 //            System.out.println("MyTi.Station Name    :  Zone");
 //            for(int i=0;i<MyTi.UsersData.stationsName.size();i++){
 //                System.out.println(MyTi.UsersData.stationsName.get(i));
